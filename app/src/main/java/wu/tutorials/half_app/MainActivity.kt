@@ -35,6 +35,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import wu.tutorials.half_app.ui.theme.Half_appTheme
+import wu.tutorials.half_app.ui.theme.MiddleButton
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,6 +44,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             UpperPanel()
             MenuCategory()
+            MiddleButton()
 
         }
 
