@@ -34,7 +34,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import wu.tutorials.half_app.ui.theme.Half_appTheme
+import wu.tutorials.half_app.ui.theme.Home
+import wu.tutorials.half_app.ui.theme.MiddleButton
+import wu.tutorials.half_app.ui.theme.NextScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,8 +50,25 @@ class MainActivity : ComponentActivity() {
             UpperPanel()
             MenuCategory()
 
+            MyNavigation()
+
         }
 
     }
+}
+
+
+@Composable
+fun MyNavigation() {
+    val navController = rememberNavController()
+    NavHost(navController = navController, startDestination = Home.route ) {
+        composable(Home.route){
+            MiddleButton(navController)
+        }
+        composable(NextScreen.route){
+            NextScreen()
+        }
+    }
+
 }
 
