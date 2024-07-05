@@ -4,4 +4,13 @@
     <string name="tag_line">Chicago</string>
     <string name="button">ordered</string>
     <string name="discription">Lemons are oval citrus fruits with smooth porous skin. Some fruits have a pointed tip on the bottom of the fruit while other lemons are rounded at the base. Lemon fruits colour range from greenish yellow to bright yellow. In many cultivated varieties the branches have stout, stiff thorns. flowering plant family Rutaceae</string>
+    <string-array name="foodcaategory">
+        <item>breakfast</item>
+        <item>lunch</item>
+        <item>dinner</item>
+        <item>party</item>
+        <item>treat</item>
+        <item>donation</item>
+        <item>mzzey</item>
+    </string-array>
 </resources>
