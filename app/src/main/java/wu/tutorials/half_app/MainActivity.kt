@@ -1,6 +1,7 @@
 package wu.tutorials.half_app
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -26,6 +27,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.pointer.motionEventSpy
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -39,6 +41,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
+            val context = LocalContext.current
             Column(modifier = Modifier
                 .fillMaxWidth()
                 .background(Color(0xFF495E57))
@@ -52,14 +55,21 @@ class MainActivity : ComponentActivity() {
 
 
 
-                Row (modifier = Modifier.fillMaxWidth().padding(5.dp), horizontalArrangement = Arrangement.Start){
+                Row (modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(5.dp), horizontalArrangement = Arrangement.Start){
 
-                    Text(text = stringResource(id = R.string.discription), color = Color.White, fontSize = 18.sp, fontWeight = FontWeight.Bold, modifier = Modifier.width(200.dp).height(100.dp))
-                    Image(painter = painterResource(id = R.drawable.littlelemon), contentDescription = "", modifier = Modifier.width(220.dp).height(110.dp).clip(
-                        RoundedCornerShape(200.dp)
-                    ))
+                    Text(text = stringResource(id = R.string.discription), color = Color.White, fontSize = 18.sp, fontWeight = FontWeight.Bold, modifier = Modifier
+                        .width(200.dp)
+                        .height(100.dp))
+                    Image(painter = painterResource(id = R.drawable.littlelemon), contentDescription = "", modifier = Modifier
+                        .width(220.dp)
+                        .height(110.dp)
+                        .clip(
+                            RoundedCornerShape(200.dp)
+                        ))
                 }
-                Button(onClick = { /*TODO*/ },
+                Button(onClick = {Toast.makeText(context, getText(R.string.button),Toast.LENGTH_LONG).show()},
                     colors = ButtonDefaults.buttonColors(Color.Gray),
                     border = BorderStroke(1.dp,Color.Red), modifier = Modifier.padding(top = 10.dp)) {
                     Text(text = "submit")
