@@ -16,9 +16,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Scaffold
@@ -37,14 +35,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import wu.tutorials.half_app.ui.theme.Half_appTheme
-import java.util.Locale.Category
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            HomeScreen()
             val context = LocalContext.current
             Column(modifier = Modifier
                 .fillMaxWidth()
@@ -78,44 +74,24 @@ class MainActivity : ComponentActivity() {
                     border = BorderStroke(1.dp,Color.Red), modifier = Modifier.padding(top = 10.dp)) {
                     Text(text = "submit")
                 }
-                Row (modifier = Modifier
-                    .fillMaxWidth()
-                    .verticalScroll(rememberScrollState())
-                    , horizontalArrangement = Arrangement.SpaceEvenly
-                )
-
-                {
-                    categories.forEach{
-                        MenuCategory(category = it)
-                    }
-                }
             }
-
-
         }
 
     }
 }
 
 @Composable
-fun MenuCategory(category: String) {
-    Button(onClick = { /*TODO*/ }, colors = ButtonDefaults.buttonColors(Color.Gray)) {
-        Text(text = category)
-
-    }
+fun Greeting(name: String, modifier: Modifier = Modifier) {
+    Text(
+        text = "Hello $name!",
+        modifier = modifier
+    )
 }
 
-
-val categories = listOf<String>(
-    "breakfast",
-    "lunch",
-    "dinner"
-
-)
-
+@Preview(showBackground = true)
 @Composable
-fun HomeScreen() {
-    Scaffold {
+fun GreetingPreview() {
+    Half_appTheme {
+        Greeting("Android")
     }
-    
 }
