@@ -35,6 +35,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import wu.tutorials.half_app.ui.theme.Half_appTheme
+import java.util.Locale.Category
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -74,24 +75,35 @@ class MainActivity : ComponentActivity() {
                     border = BorderStroke(1.dp,Color.Red), modifier = Modifier.padding(top = 10.dp)) {
                     Text(text = "submit")
                 }
+                Row (modifier = Modifier.fillMaxWidth()
+                    , horizontalArrangement = Arrangement.SpaceEvenly
+                )
+
+                {
+                    categories.forEach{
+                        MenuCategory(category = it)
+                    }
+                }
             }
+
+
         }
 
     }
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+fun MenuCategory(category: String) {
+    Button(onClick = { /*TODO*/ }, colors = ButtonDefaults.buttonColors(Color.Gray)) {
+        Text(text = category)
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    Half_appTheme {
-        Greeting("Android")
     }
 }
+
+
+val categories = listOf<String>(
+    "breakfast",
+    "lunch",
+    "dinner"
+
+)
