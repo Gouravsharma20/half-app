@@ -27,7 +27,7 @@ fun MenuCategory(){
     Row (modifier = Modifier
         .fillMaxWidth()
         .horizontalScroll(scrollState)
-        .padding(top = 300.dp), horizontalArrangement = Arrangement.spacedBy(10.dp)
+        , horizontalArrangement = Arrangement.spacedBy(10.dp)
     ){
         Categories.forEach { category ->
             Button(onClick ={ } , colors = ButtonDefaults.buttonColors(Color.Gray)) {
@@ -40,10 +40,10 @@ fun MenuCategory(){
     
 }
 val Categories = listOf<String>(
-    "aalu",
-    "chakalu",
-    "bukhalu",
-    "udalu",
-    "bulalu"
+    "Lunch",
+    "Dinner",
+    "Breakfast",
+    "Party",
+    "Dine-In"
 
 )
