@@ -48,7 +48,7 @@ fun MenuGrid() {
 
 @Composable
 fun GridCell() {
-    Card (elevation = CardDefaults.cardElevation(defaultElevation = 16.dp), modifier = Modifier.padding(8.dp)
+    Card (elevation = CardDefaults.cardElevation(defaultElevation = 16.dp), modifier = Modifier.padding(8.dp).background(Color.Yellow)
     ) {
         Box (modifier = Modifier
             .requiredSize(180.dp, 100.dp)

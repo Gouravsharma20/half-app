@@ -1,7 +1,7 @@
 package wu.tutorials.half_app
 
+
 import android.annotation.SuppressLint
-import android.content.Context
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -9,23 +9,13 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Scaffold
-import androidx.compose.material.ScaffoldState
 import androidx.compose.material.rememberScaffoldState
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
-import wu.tutorials.half_app.ui.theme.TopAppBar
-import wu.tutorials.half_app.ui.theme.DrawerPanel
 import androidx.navigation.compose.rememberNavController
-import wu.tutorials.half_app.ui.theme.MiddleButton
-
-
-
-
 import wu.tutorials.half_app.ui.theme.DrawerPanel
 import wu.tutorials.half_app.ui.theme.MenuGrid
 import wu.tutorials.half_app.ui.theme.MiddleButton
@@ -57,8 +47,10 @@ fun HomeScreen() {
         Column(modifier = Modifier.padding(1.dp)) {
             UpperPanel()
             MenuCategory()
-            MenuGrid()
+
             MiddleButton(navController = navController)
+            MenuGrid()
+
         }
 
     }
