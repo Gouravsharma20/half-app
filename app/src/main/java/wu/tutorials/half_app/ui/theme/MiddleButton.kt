@@ -24,7 +24,7 @@ fun MiddleButton(navController: NavController) {
     Column(modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally) {
         Button(
             onClick = {
-                navController.navigate(NextScreen.route)
+                navController.navigate("NextScreen")
                 Toast.makeText(context,"NAVIGATING...",Toast.LENGTH_LONG).show()
                       },
             colors = ButtonDefaults.buttonColors(Color.Gray)
